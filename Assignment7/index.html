@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+        </style>
+    <style>
+      
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 10px;
+            scroll-behavior: smooth;
+        }
+      
+        :root{
+            --main-color: black;
+            --text-color: black;
+            --bg-color: #ECE8DF;
+            font-family: "SUSE";
+            --big-font:5rem;
+            --h2-font:2.25rem;
+            --p-font:0.9rem;
+            
+        }
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            
+          
+        }
+        .navbar{
+            width: 100vw;
+            height: 10vh;
+            border-bottom: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background-color: var(--bg-color);
+
+        }
+        .nav :hover{
+            color: red;
+            font-weight: 999;
+        }
+        .logo{
+            width: 10vw;
+            padding-left: 2vw;
+            color: var(--text-color);
+        }
+        .logo span{
+            
+            font-size: 4rem;
+        }
+        .logo span:hover{
+            color: red;
+            font-weight: bolder;
+        }
+        .nav{
+            width: 70%;
+            height: 100%;
+            
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-around;
+            padding-right: 2rem;
+            list-style-type: none;
+            flex-wrap: wrap;
+          
+            
+
+        }
+       .nav li a{
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: var(--h2-font);
+        }
+
+        #act,.barI {
+            display: none;
+        }
+    
+        
+
+        @media (max-width:900px) {
+            body{
+                font-size: 5px;
+            }
+            #act{
+                display: none;
+            }
+            .nav{
+                display: block;
+            }
+
+            .barI{
+                display: block;
+                height: 100%;
+                width: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .barI label i{
+               color: var(--main-color);
+                font-size: 4rem;
+            }
+            .nav{
+                font-size: var(--h2-font);
+                font-family: cursive;
+                position: absolute;
+                background: var(--bg-color);
+                top: 12vh;
+                right: 0px;
+                top: -100%;
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .nav li a:hover{
+                color: red;
+            }
+            #act:checked ~ul{
+                top:12vh;
+                transition: 0.5s;
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            
+        }
+        .section1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows:1fr;
+        }
+       
+        .sec1Img {
+          
+           background-color: black;
+           margin: 15vw;
+           border-radius: 20%;
+        }
+        
+       
+        .section2, .section3,.section4{
+           
+            display: grid;
+            
+            grid-template-columns: repeat(2,1fr);
+        }
+       
+
+       
+        .box1{
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .box2{
+            display: flex; 
+            
+             align-items: center;
+            justify-content: center; 
+             flex-wrap: wrap; 
+            
+        } 
+        
+
+         .AboutImg , .sec3Img, .sec4Img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10vw;
+            flex-wrap: wrap;
+            gap: 2vw;
+
+       }
+
+       
+        .AboutImg img{
+            width: 40%;
+            height: 40%;
+            background-color: black;
+            border-radius: 20%;
+            
+        }
+        .sec3Img img{
+            width: 40%;
+            height: 40%;
+            background-color: black;
+            border-radius: 20%;
+            
+        }
+      
+        section .box1{
+            display: flex;
+            align-items: start;
+            padding: 10vw;
+        }
+        .sec3Img img,.sec4Img img{
+            background-color: white;
+            width: 50%;
+            height: 50%;
+            border-radius: 20%;
+           
+        }
+        
+       
+       
+        .Footer{
+            
+            width: 100%;
+            height: 15vh;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3vw;
+            flex-wrap: wrap;
+            
+        }
+       
+        .Footer a i{
+            color: var(--text-color);
+            font-size: 5vw;
+           
+        }
+        @media (max-width: 600px) {
+           
+
+            .section1 , .section2 , .section3 , .section4{
+               
+               
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr ;
+                
+               
+            }
+
+            section .box1{
+                display: flex;
+                align-items: center ;
+                
+            }
+          
+
+        
+
+           
+        }
+        footer  div h2,section div h2{
+            font-size: 3vw;
+
+        }
+        /* {
+           font-size: 3vw;
+        } */
+        section p{
+            font-size: 2vw;
+        }
+
+        /* Media for Images */
+
+   
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <input id="act" type="checkbox">
+        <div class="logo">
+           <span> SK</span>
+        </div>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a> </li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#Skill">Skill</a> </li>
+            <li><a href="#Contact">Contacts</a> </li>
+        </ul>
+        <div class="barI"><label for="act"><i class="fa-solid fa-bars"></i></label></div>
+    </header>
+
+    <section class="section1" id="home">
+        
+        <div class="box1">
+            <h2>Hii Everyone, 
+            </h2>
+            <h2>My Self Sameer Khan.</h2>
+            <h2>Welcome To My Portfolio.</h2>
+            </div>
+        <div class="box2 sec1Img">
+            <img src="img/sameer.png" alt="">
+        </div>
+
+    </section>
+
+    <section class="section2" id="about">
+        <div class="box1">
+            <h2>About Me:-</h2>
+            <h2>I am Form IT Background only.</h2>
+           
+            <p>I want to become Pyhton FullStack Developer.</p> <p>
+                 I also Want To become Data-Scientist.</p>
+            <p>Coding is my Both Passion and Intrest.</p>
+            
+            </div>
+        <div class="box2 AboutImg">
+           
+            <img src="img/pyhtonFullstack.png" alt="">
+            <img  src="img/DataScience.png" alt="">  
+          <img src="img/image copy.png" alt="">
+          <img src="img/Fulls2.png" alt="">
+        
+        </div>
+
+    </section>
+
+    <section class="section3" id="education">
+        <div class="box1">
+            <h2>Education</h2>
+            <p>I have completed My HSC  From Sies College</p>
+            <p>Currently I am Pursing Bsc.Cs (Ty) form RJ college</p></div>
+        <div class="box2 sec3Img">
+            <img src="img/Rj.png" alt="">
+            <img src="img/Sies.png" alt="">
+        </div>
+
+    </section>
+
+    <section class="section4" id="Skill">
+        <div class="box1">
+            <h2>About My Skills:</h2>
+            <p>computer:-Have Full Basic and Some Advance Knowledge of Computer</p>
+            <p>
+               Programming Language:-Core Java and Advance Java 
+            </p>
+            <p>
+               Forntend:- Working on Html,Css and JavaScript
+            </p>
+            </div>
+        <div class="box2 sec4Img">
+           <img src="img/Java.png" alt="">
+           <img src="img/fullStack.png" alt="">
+        </div>
+
+    </section>
+    <hr>
+    <footer   id="Contact">
+       
+        <div class="Footer">
+            <h2>Contact Me:-</h2>
+      <a href="https://www.linkedin.com/in/sameer-khan-7a5741264/">  <i class="fa-brands fa-linkedin"></i></a>
+
+      <a href="https://x.com/home">  <i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.instagram.com/"> <i class="fa-brands fa-instagram"></i></a> 
+       <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    </footer>
+</body>
+</html>
